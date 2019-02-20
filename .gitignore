@@ -1,0 +1,14 @@
+# CPython
+__pycache__/
+*.pyc
+
+# Pycharm
+/.idea/
+
+# virtualenv
+/venv/
+
+*.pkl
+*.csv
+*.zip
+.temp*
