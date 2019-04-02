@@ -35,7 +35,7 @@ def main():
             label=background_label,
         )
         plt.legend()
-        plt.xlabel("log2(energy)")
+        plt.xlabel("deposit energy (log2 scale)")
         plt.ylabel(y_label)
         plt.show()
 
@@ -55,27 +55,27 @@ def main():
             label=background_label,
         )
         plt.legend()
-        plt.xlabel("time")
+        plt.xlabel("drift time")
         plt.ylabel(y_label)
         plt.show()
 
-        # radius distribution
+        # layer distribution
         plt.hist(
-            signals.r,
+            signals.layer,
             NUM_LAYER,
             density=density,
             alpha=0.5,
             label=signal_label,
         )
         plt.hist(
-            backgrounds.r,
+            backgrounds.layer,
             NUM_LAYER,
             density=density,
             alpha=0.5,
             label=background_label,
         )
         plt.legend()
-        plt.xlabel("r")
+        plt.xlabel("layer")
         plt.ylabel(y_label)
         plt.show()
 
