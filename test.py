@@ -31,6 +31,7 @@ def main():
             break
 
     plt.plot(fprs, tprs)
+    plt.plot((0, 1), (0, 1), "--")
     plt.xlabel("FPR")
     plt.ylabel("TPR")
     plt.show()
