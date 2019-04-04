@@ -1,6 +1,7 @@
 # coding: utf-8
 from sklearn.externals import joblib
-from sklearn.metrics import log_loss, roc_auc_score, roc_curve
+from sklearn.metrics import log_loss, roc_curve, auc
+import matplotlib.pyplot as plt
 
 import dot
 from util import *
@@ -18,15 +19,21 @@ def main():
     logloss = log_loss(y, y_pred)
     print("logloss: {}".format(logloss))
 
-    auc = roc_auc_score(y, y_pred)
-    print("auc: {}".format(auc))
-
     fprs, tprs, _ = roc_curve(y, y_pred)
+
+    auc_score = auc(fprs, tprs)
+    print("auc: {}".format(auc_score))
+
     for fpr, tpr in zip(fprs, tprs):
         if tpr >= MIN_TPR:
             msg = "signal acceptance: {}, background rejection: {}."
             print(msg.format(tpr, 1 - fpr))
             break
+
+    plt.plot(fprs, tprs)
+    plt.xlabel("FPR")
+    plt.ylabel("TPR")
+    plt.show()
 
 
 if __name__ == '__main__':
