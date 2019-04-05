@@ -9,7 +9,7 @@ DTYPE_TIME = np.int16
 DTYPE_ENERGY = np.float32
 
 
-NUM_WIRE = 4482
-NUM_LAYER = 18
-NUM_CELL = tuple(range(198, 301, 6))
-assert sum(NUM_CELL) == NUM_WIRE
+N_WIRES = 4482
+N_LAYERS = 18
+N_CELLS = tuple(range(198, 301, 6))
+assert sum(N_CELLS) == N_WIRES

@@ -62,14 +62,14 @@ def main():
         # layer distribution
         plt.hist(
             signals.layer,
-            NUM_LAYER,
+            N_LAYERS,
             density=density,
             alpha=0.5,
             label=signal_label,
         )
         plt.hist(
             backgrounds.layer,
-            NUM_LAYER,
+            N_LAYERS,
             density=density,
             alpha=0.5,
             label=background_label,

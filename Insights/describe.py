@@ -1,7 +1,7 @@
 # coding: utf-8
 import pandas as pd
 
-PATH = "../Data/train_set.zip"
+PATH = "../Data/signals.zip"
 
 
 def main():
