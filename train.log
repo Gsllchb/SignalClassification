@@ -130,3 +130,36 @@ DecisionTreeClassifier(class_weight='balanced', criterion='gini',
             splitter='best')
 logloss: 0.0991703759009912
 auc: 0.9941296498177771
+
+2019-04-07 16:21:15.061353
+model id: 194861576873
+DecisionTreeClassifier(class_weight='balanced', criterion='gini',
+            max_depth=None, max_features=None, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=4096, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, presort=False, random_state=666,
+            splitter='best')
+logloss: 0.12389633519979128
+auc: 0.9911295516497876
+
+2019-04-07 16:21:52.001911
+model id: 159298298537
+DecisionTreeClassifier(class_weight='balanced', criterion='gini',
+            max_depth=None, max_features=None, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=20000, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, presort=False, random_state=666,
+            splitter='best')
+logloss: 0.16994732998733822
+auc: 0.9831575262896928
+
+2019-04-07 16:22:19.269515
+model id: 9223371912272127200
+DecisionTreeClassifier(class_weight='balanced', criterion='gini',
+            max_depth=None, max_features=None, max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=50000, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, presort=False, random_state=666,
+            splitter='best')
+logloss: 0.22823905601649724
+auc: 0.9701741689277741
