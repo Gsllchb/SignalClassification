@@ -8,7 +8,7 @@ from util import *
 
 PATH = "Models/150079861715.pkl"
 
-MIN_TPR = 0.99
+MIN_TPRS = (0.90, 0.95, 0.99)
 
 
 def main():
@@ -19,16 +19,15 @@ def main():
     logloss = log_loss(y, y_pred)
     print("logloss: {}".format(logloss))
 
-    fprs, tprs, _ = roc_curve(y, y_pred)
+    fprs, tprs, thresholds = roc_curve(y, y_pred)
 
     auc_score = auc(fprs, tprs)
     print("auc: {}".format(auc_score))
 
-    for fpr, tpr in zip(fprs, tprs):
-        if tpr >= MIN_TPR:
-            msg = "signal acceptance: {}, background rejection: {}."
-            print(msg.format(tpr, 1 - fpr))
-            break
+    pa_nr_and_threshold = get_pa_nr_and_threshold(fprs, tprs, thresholds, MIN_TPRS)
+    print("PA\tNR\tthreshold")
+    for pa, nr, threshold in pa_nr_and_threshold:
+        print("{}\t{}\t{}".format(pa, nr, threshold))
 
     plt.plot(fprs, tprs)
     plt.plot((0, 1), (0, 1), "--")

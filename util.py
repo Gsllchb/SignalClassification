@@ -31,3 +31,13 @@ def load_data(path: str):
     X = data.loc[:, features]
     y = data.loc[:, target]
     return X, y
+
+
+def get_pa_nr_and_threshold(fprs, tprs, thresholds, min_tprs):
+    res = []
+    for min_tpr in min_tprs:
+        for fpr, tpr, threshold in zip(fprs, tprs, thresholds):
+            if tpr >= min_tpr:
+                res.append((tpr, 1 - fpr, threshold))
+                break
+    return res
